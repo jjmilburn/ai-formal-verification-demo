@@ -1,12 +1,16 @@
 --------------------------- MODULE MutualExclusion ---------------------------
 (*
-  Peterson's Mutual Exclusion Algorithm
+  Peterson's Mutual Exclusion Algorithm - VERIFIED VERSION
 
-  Classic example of formal verification.
-  Two processes share a critical section - we verify they never both enter.
+  This is the FIXED spec after feeding the TLC counterexample back to the LLM.
 
-  This is the example from Murat Demirbas's "Genefication" blog post,
-  demonstrating the LLM + TLC feedback loop.
+  The skeleton version deadlocked because when both processes set their flags,
+  neither could enter. The fix: add a "turn" variable as a tiebreaker.
+
+  Key insight: "After you!" politeness - each process sets turn to the OTHER
+  process, so if both are waiting, the one who said "after you" last wins.
+
+  See MutualExclusion_skeleton.tla for the broken version.
 *)
 
 EXTENDS Integers, TLC

@@ -35,6 +35,9 @@ lake-packages/
 
 # TLA+ artifacts
 *.toolbox/
+*_TTrace_*.tla
+*_TTrace_*.bin
+examples/tlaplus/states/
 
 # Claude Code local settings
 .claude/
