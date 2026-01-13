@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+results/*.json
+!results/.gitkeep
+
+# Lean build artifacts
+.lake/
+lake-packages/
+
+# TLA+ artifacts
+*.toolbox/
+
+# Claude Code local settings
+.claude/
